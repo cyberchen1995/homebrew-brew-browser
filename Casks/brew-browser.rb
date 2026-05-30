@@ -8,11 +8,19 @@ cask "brew-browser" do
   desc "Native GUI for Homebrew"
   homepage "https://brew-browser.zerologic.com/"
 
-  depends_on arch: :arm64
-  # ">= :ventura" (Ventura or newer), NOT the bare `:ventura` symbol —
-  # the symbol form pins to Ventura *exactly* and would block Sonoma/
-  # Sequoia/Tahoe users. `brew style --fix` tries to rewrite this to the
+  # auto_updates true: brew-browser has an in-app updater (Settings →
+  # Network → Updates, off by default). This tells brew the app updates
+  # itself so `brew upgrade` won't fight version drift when a user
+  # self-updates. The cask version + sha256 are ALSO bumped every release
+  # so `brew upgrade --cask` users stay current (Homebrew 5.2.0+
+  # auto-upgrades auto_updates casks when the tap version is newer).
+  #
+  # depends_on macos ">= :ventura" (Ventura or newer), NOT the bare
+  # `:ventura` symbol — the symbol pins to Ventura *exactly* and would
+  # block Sonoma/Sequoia/Tahoe. `brew style --fix` rewrites this to the
   # symbol; do not accept that autocorrect, it changes the meaning.
+  auto_updates true
+  depends_on arch: :arm64
   depends_on macos: ">= :ventura"
 
   app "brew-browser.app"
