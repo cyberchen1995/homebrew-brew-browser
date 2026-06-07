@@ -1,6 +1,6 @@
 cask "brew-browser" do
-  version "0.5.0"
-  sha256 "6fd0e9fed31306d98749700185f343129d95b90fc80bfbcda6f3dbf25c098aa7"
+  version "0.5.1"
+  sha256 "472885fde3ecc6bad30fdf2c961c9186437ab4e50a94d4174fbea46de25f6001"
 
   url "https://github.com/msitarzewski/brew-browser/releases/download/v#{version}/brew-browser_#{version}_aarch64.dmg",
       verified: "github.com/msitarzewski/brew-browser/"
