@@ -1,8 +1,11 @@
 cask "brew-browser" do
-  version "0.5.1"
-  sha256 "472885fde3ecc6bad30fdf2c961c9186437ab4e50a94d4174fbea46de25f6001"
+  arch arm: "aarch64", intel: "x64"
 
-  url "https://github.com/msitarzewski/brew-browser/releases/download/v#{version}/brew-browser_#{version}_aarch64.dmg",
+  version "0.6.0"
+  sha256 arm:   "1b4defe3ecaf85e0abc93a735971a6ae97bfd11511df395b111599d294c3698d",
+         intel: "e81f38e1e41000e6fa66d8660670361345718ffd9e2225eaddfa0d77e3dc2e4f"
+
+  url "https://github.com/msitarzewski/brew-browser/releases/download/v#{version}/brew-browser_#{version}_#{arch}.dmg",
       verified: "github.com/msitarzewski/brew-browser/"
   name "brew-browser"
   desc "Native GUI for Homebrew"
@@ -18,7 +21,6 @@ cask "brew-browser" do
   # `depends_on macos: :ventura` declares Ventura as the minimum
   # supported macOS version; newer releases are also allowed.
   auto_updates true
-  depends_on arch: :arm64
   depends_on macos: :ventura
 
   app "brew-browser.app"
