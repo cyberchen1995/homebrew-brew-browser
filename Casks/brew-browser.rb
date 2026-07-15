@@ -1,9 +1,9 @@
 cask "brew-browser" do
   arch arm: "aarch64", intel: "x64"
 
-  version "0.6.0"
-  sha256 arm:   "1b4defe3ecaf85e0abc93a735971a6ae97bfd11511df395b111599d294c3698d",
-         intel: "e81f38e1e41000e6fa66d8660670361345718ffd9e2225eaddfa0d77e3dc2e4f"
+  version "0.7.1"
+  sha256 arm:   "1c61ec76fe6c66d3ff31389f42d0a2a08f6e7e33cf9d05c75bd1f01d2c3ae819",
+         intel: "f4699bc0a979d86d8695951655ba3693824057570fdc5d2060fa693c7491c982"
 
   url "https://github.com/msitarzewski/brew-browser/releases/download/v#{version}/brew-browser_#{version}_#{arch}.dmg",
       verified: "github.com/msitarzewski/brew-browser/"
